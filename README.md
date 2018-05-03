@@ -222,3 +222,33 @@ fullscreen(document.documentElement);
 //匹配双字节字符(包括汉字) 
 /[^\x00-\xff]/
 ```
+## 12.时间倒计时
+```
+<p id="_lefttime"></p>
+```
+```
+function countdown() {
+
+    var endtime = new Date("May 3, 2018 10:00:00");
+    var nowtime = new Date();
+
+    if (nowtime >= endtime) {
+        document.getElementById("_lefttime").innerHTML = "倒计时间结束";
+        return;
+    }
+
+    var leftsecond = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
+    if (leftsecond < 0) {
+        leftsecond = 0;
+    }
+
+    __d = parseInt(leftsecond / 3600 / 24);
+    __h = parseInt((leftsecond / 3600) % 24);
+    __m = parseInt((leftsecond / 60) % 60); 
+    __s = parseInt(leftsecond % 60);
+
+    document.getElementById("_lefttime").innerHTML = __d + "天" + __h + "小时" + __m + "分" + __s + "秒";
+}
+
+countdown();
+```
