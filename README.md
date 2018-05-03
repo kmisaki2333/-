@@ -1,10 +1,10 @@
 # 常用代码片段
-1.鼠标滚轮
+## 1.鼠标滚轮
 
 $('body').on("mousewheel DOMMouseScroll", function (event) { 
-    // chrome & ie || // firefox
-    var delta = (event.originalEvent.wheelDelta && (event.originalEvent.wheelDelta > 0 ? 1 : -1)) || 
-        (event.originalEvent.detail && (event.originalEvent.detail > 0 ? -1 : 1));  
+    // chrome & ie || // firefox <br>
+    var delta = (event.originalEvent.wheelDelta && (event.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  
+        (event.originalEvent.detail && (event.originalEvent.detail > 0 ? -1 : 1));    
     
     if (delta > 0) { 
         console.log('mousewheel top');
@@ -13,7 +13,7 @@ $('body').on("mousewheel DOMMouseScroll", function (event) {
     } 
 });
 
-2.鼠标坐标
+## 2.鼠标坐标
 X:<input id="xxx" type="text" /> Y:<input id="yyy" type="text" />
 
 方法一：
@@ -46,7 +46,7 @@ $('#ele').click(function(event){
     console.log('X：'+$(this).offset().left+'\n Y:'+$(this).offset().top);
 })
 
-3.检查浏览器是否支持SVG
+## 3.检查浏览器是否支持SVG
 function isSupportSVG() { 
     var SVG_NS = 'http://www.w3.org/2000/svg';
     return !!document.createElementNS &&!!document.createElementNS(SVG_NS, 'svg').createSVGRect; 
@@ -54,7 +54,7 @@ function isSupportSVG() {
 
 console.log(isSupportSVG());
 
-4.检查浏览器是否支持Canvas
+## 4.检查浏览器是否支持Canvas
 function isSupportCanvas() {
     if(document.createElement('canvas').getContext){
         return true;
@@ -65,7 +65,7 @@ function isSupportCanvas() {
 
 console.log(isSupportCanvas());
 
-5.检查是否是微信浏览器
+## 5.检查是否是微信浏览器
 function isWeiXinClient() {
     var ua = navigator.userAgent.toLowerCase(); 
     if (ua.match(/MicroMessenger/i)=="micromessenger") { 
@@ -77,7 +77,7 @@ function isWeiXinClient() {
 
 alert(isWeiXinClient());
 
-6.检查是否是移动端以及当前浏览器内核
+## 6.检查是否是移动端以及当前浏览器内核
 var browser = { 
     versions: function() { 
         var u = navigator.userAgent; 
@@ -100,7 +100,7 @@ if (browser.versions.mobile() || browser.versions.ios() || browser.versions.andr
     alert('移动端'); 
 }
 
-7.检测是否电脑端/移动端
+## 7.检测是否电脑端/移动端
 var browser={ 
     versions:function(){
         var u = navigator.userAgent, app = navigator.appVersion;
@@ -128,7 +128,7 @@ if(browser.versions.mobile || browser.versions.iWinPhone){
     console.log('pc');
 }
 
-8.检测浏览器内核
+## 8.检测浏览器内核
 function getInternet(){    
     if(navigator.userAgent.indexOf("MSIE")>0) {    
       return "MSIE";       //IE浏览器  
@@ -151,7 +151,7 @@ function getInternet(){
 } 
 getInternet();
 
-9.强制移动端页面横屏显示
+## 9.强制移动端页面横屏显示
 $( window ).on( "orientationchange", function( event ) {
     if (event.orientation=='portrait') {
         $('body').css('transform', 'rotate(90deg)');
@@ -161,7 +161,7 @@ $( window ).on( "orientationchange", function( event ) {
 });
 $( window ).orientationchange();
 
-10.电脑端页面全屏显示
+## 10.电脑端页面全屏显示
 function fullscreen(element) {
     if (element.requestFullscreen) {
         element.requestFullscreen();
@@ -176,7 +176,7 @@ function fullscreen(element) {
 
 fullscreen(document.documentElement);
 
-11.正则表达式
+## 11.正则表达式
 //验证邮箱 
 /^\w+@([0-9a-zA-Z]+[.])+[a-z]{2,4}$/ 
 
