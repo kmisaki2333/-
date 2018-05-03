@@ -1,5 +1,6 @@
 # 常用代码片段
 1.鼠标滚轮
+
 $('body').on("mousewheel DOMMouseScroll", function (event) { 
     // chrome & ie || // firefox
     var delta = (event.originalEvent.wheelDelta && (event.originalEvent.wheelDelta > 0 ? 1 : -1)) || 
