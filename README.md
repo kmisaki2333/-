@@ -16,7 +16,7 @@ $('body').on("mousewheel DOMMouseScroll", function (event) {
 ## 2.鼠标坐标
 X:<input id="xxx" type="text" /> Y:<input id="yyy" type="text" />
 
-方法一：
+### 方法一：
 function mousePosition(ev){
     if(ev.pageX || ev.pageY){
         return {x:ev.pageX, y:ev.pageY};
@@ -37,7 +37,7 @@ function mouseMove(ev){
 }
 document.onmousemove = mouseMove;
 
-方法二：
+### 方法二：
 $('#ele').click(function(event){
     //获取鼠标在图片上的坐标 
     console.log('X：' + event.offsetX+'\n Y:' + event.offsetY); 
